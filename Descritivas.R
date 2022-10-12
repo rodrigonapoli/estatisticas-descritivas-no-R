@@ -9,6 +9,8 @@ library("psych")
 library("writexl")
 library("tidyverse")
 library("readxl") #para ler o arquivo em excel
+library("janitor")
+library ("plyr")
 
 #abrindo o arquivo em excel
 dados <- read_excel("/Users/rodrigonapoli/Dropbox/ Assessoria/ 2022/Telma (Nutri)/Novas analises (Set_22)/DADOS BIO TELMA 25.09.xlsx", sheet = 3)
@@ -34,7 +36,7 @@ str(dados)
 
 grafico <- ggboxplot(dados, x = "esteatose", y = "hemoglobina", 
           ylab = "Hemoglobina", xlab = "Grau de Esteatose",)
-gráfico
+grafico
 
 #gráfico colorido
 peso <- ggboxplot(dados, x = "esteatose", y = "peso", 
